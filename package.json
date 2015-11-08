@@ -1,0 +1,63 @@
+{
+  "name": "pb-cassandra-throttler",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Controls the cassandra load, suspedning offline operations as needed. Uses OpsCenter and MX4J when it comes to collecting detailed node statistics.",
+  "main": "index.js",
+  "directories":
+  {
+    "test": "./test",
+    "lib": "./lib"
+  },
+  "scripts": 
+  {
+    "test": "mocha -R spec test/*.js && mocha --require blanket -R travis-cov test/*.js",
+    "test-cov": "mocha --require blanket -R travis-cov test/*.js",
+    "coverage": "mocha --require blanket -R html-cov test/*.js > test/coverage.html"
+  },
+  "config": {
+    "blanket":
+    {
+      "pattern": "//^((?!\/node_modules\/)(?!\/test\/)(?!\/examples\/).)*$/ig"
+    },
+    "travis-cov": { "threshold": 90 }
+  },
+  "dependencies": {
+    "node-rest-client": "~1.5.1"
+  },
+  "devDependencies": {
+    "chai": "^1.10.0",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-compress": "^0.13.0",
+    "grunt-contrib-connect": "^0.10.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-docular": "^0.2.4",
+    "grunt-mocha-test": "^0.11.0",
+    "jshint": "^2.5.6",
+    "jshint-stylish": "^0.2.0",
+    "load-grunt-tasks": "^0.4.0",
+    "mocha": "~1.21.4",
+    "should": "^5.2.0",
+    "supertest-as-promised": "^1.0.0",
+    "time-grunt": "^0.3.1",
+    "blanket": "*",
+    "travis-cov": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/peerbelt/pb-core-ontology.git"
+  },
+  "keywords": [
+    "cassandra",
+    "throttle",
+    "opscenter",
+    "mx4j",
+    "peerbelt"
+  ],
+  "author": "Peerbelt <info@peerbelt.com>",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/peerbelt/pb-cassandra-throttler/issues"
+  },
+  "homepage": "https://github.com/peerbelt/pb-cassandra-throttler"
+}
